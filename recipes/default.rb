@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-require_recipe "mysql::server"
+include_recipe "mysql::server"
 
 execute "remove test database" do
   command "mysql -u root -p#{node['mysql']['server_root_password']} -e \"DROP DATABASE test;\""
